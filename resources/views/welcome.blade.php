@@ -21,7 +21,6 @@
         </style>
     </head>
     <body class="antialiased">
-        <?php echo $name; ?>
-        <?php echo $age; ?>
+        this is welcome page.
     </body>
 </html>

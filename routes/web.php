@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $name = 'jafar';
-    $age = 27;
-    return view('welcome',compact(['name', 'age']));
-});
+// Route::get('/', function () {
+//     $name = 'jafar';
+//     $age = 27;
+//     return view('welcome',compact(['name', 'age']));
+// });
+
+Route::get('/','\App\Http\Controllers\HomeController@index')->name('home.index');
