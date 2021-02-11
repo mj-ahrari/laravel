@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::fallback(function(){
-    return "Not found";
+    $name = 'jafar';
+    $age = 27;
+    return view('welcome',compact(['name', 'age']));
 });
