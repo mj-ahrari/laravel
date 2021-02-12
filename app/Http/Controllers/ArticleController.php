@@ -13,7 +13,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        return view('form');
     }
 
     /**
@@ -34,7 +34,12 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->email === "ahrari.eh@gmail.com"){
+            session(['isAdmin'=>'Are']);
+            return redirect()->route('admin')->with('admin','yes');
+        }else{
+            return redirect()->back();
+        }
     }
 
     /**
