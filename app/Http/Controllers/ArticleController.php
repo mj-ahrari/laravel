@@ -13,7 +13,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('form');
+        $articles = ['art1', 'art2', 'art3'];
+        return view('article', compact('articles'));
     }
 
     /**

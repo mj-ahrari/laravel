@@ -56,6 +56,8 @@ use Illuminate\Support\Facades\Route;
 //     abort('404',"پیدا نشد.");
 // });
 
-Route::get('test', function () {
-    return response('this ia test')->header('X-Powered-By', 'ASP.NET', false)->cookie('name','Ali');
-});
+// Route::get('test', function () {
+//     return response('this ia test')->header('X-Powered-By', 'ASP.NET', false)->cookie('name','Ali');
+// });
+
+Route::get('/article','\App\Http\Controllers\ArticleController@index')->name('article.index');
