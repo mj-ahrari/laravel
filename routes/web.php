@@ -53,3 +53,7 @@ Route::get('admin', function () {
     echo session('admin');
     echo session('isAdmin');
 })->name('admin');
+
+Route::get('/notfound', function () {
+    abort('404',"پیدا نشد.");
+});
