@@ -1,8 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
-use Whoops\Run;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,13 +20,13 @@ use Whoops\Run;
 // });
 
 // Route::get('/','\App\Http\Controllers\HomeController@index')->name('home.index');
-Route::get('/article','\App\Http\Controllers\ArticleController@index')->name('article.index');
-Route::get('/article/show/{id?}','\App\Http\Controllers\ArticleController@show')->name('article.show');
-Route::get('/article/create/','\App\Http\Controllers\ArticleController@create')->name('article.create');
-Route::post('/article','\App\Http\Controllers\ArticleController@store')->name('article.store');
-Route::get('/article/edit/{id}','\App\Http\Controllers\ArticleController@edit')->name('article.edit');
-Route::put('/article/update/{id}','\App\Http\Controllers\ArticleController@update')->name('article.update');
-Route::delete('/article/delete/{id}','\App\Http\Controllers\ArticleController@destroy')->name('article.destroy');
+// Route::get('/article','\App\Http\Controllers\ArticleController@index')->name('article.index');
+// Route::get('/article/show/{id?}','\App\Http\Controllers\ArticleController@show')->name('article.show');
+// Route::get('/article/create/','\App\Http\Controllers\ArticleController@create')->name('article.create');
+// Route::post('/article','\App\Http\Controllers\ArticleController@store')->name('article.store');
+// Route::get('/article/edit/{id}','\App\Http\Controllers\ArticleController@edit')->name('article.edit');
+// Route::put('/article/update/{id}','\App\Http\Controllers\ArticleController@update')->name('article.update');
+// Route::delete('/article/delete/{id}','\App\Http\Controllers\ArticleController@destroy')->name('article.destroy');
 
 // Route::resource('category', '\App\Http\Controllers\CategoryController');
 // Route::get('profile','\App\Http\Controllers\ShowProfile');
@@ -48,12 +46,16 @@ Route::delete('/article/delete/{id}','\App\Http\Controllers\ArticleController@de
 // Route::get('users/{id}', function ($id) {
     
 // });
-Route::get('admin', function () {
-    echo "Your are admin";
-    echo session('admin');
-    echo session('isAdmin');
-})->name('admin');
+// Route::get('admin', function () {
+//     echo "Your are admin";
+//     echo session('admin');
+//     echo session('isAdmin');
+// })->name('admin');
 
-Route::get('/notfound', function () {
-    abort('404',"پیدا نشد.");
+// Route::get('/notfound', function () {
+//     abort('404',"پیدا نشد.");
+// });
+
+Route::get('test', function () {
+    return response('this ia test')->header('X-Powered-By', 'ASP.NET', false)->cookie('name','Ali');
 });
