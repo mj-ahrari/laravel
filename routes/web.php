@@ -37,4 +37,10 @@ Route::get('test1', function () {
     return redirect()->to('/article/create');
 });
 
-Route::redirect('test2', '/article/create', 301);
+Route::get('redirect',function(){
+    return redirect()->route('article.show',['id'=>1]);
+});
+Route::get('redirectback', function () {
+    return redirect()->back();
+});
+
