@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +30,11 @@ Route::put('/article/update/{id}','\App\Http\Controllers\ArticleController@updat
 Route::delete('/article/delete/{id}','\App\Http\Controllers\ArticleController@destroy')->name('article.destroy');
 
 Route::resource('category', '\App\Http\Controllers\CategoryController');
+Route::get('profile','\App\Http\Controllers\ShowProfile');
+
+Route::get('test1', function () {
+    // Redirect::to('/article/create');
+    return redirect()->to('/article/create');
+});
+
+Route::redirect('test2', '/article/create', 301);
