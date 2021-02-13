@@ -6,7 +6,14 @@
     {{-- @foreach ($list as $name)
         {{$name}}
     @endforeach --}}
-    @include('layouts.partials.comments', compact('list'))
+    @component('layouts.partials.block')
+        @slot('linkname')
+            google
+        @endslot
+        @slot('linkhref')
+            http://www.google.com
+        @endslot
+    @endcomponent
 @endsection
 
 @section('script')
