@@ -3,6 +3,7 @@
 @section('title','myview')
 
 @section('container')
+    {{$count}}
     {{-- @foreach ($list as $name)
         {{$name}}
     @endforeach --}}
