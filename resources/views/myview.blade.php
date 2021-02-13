@@ -21,3 +21,6 @@
     @parent
     <script src="test.js"></script>
 @endsection
+@push('js')
+<script src="slave.js"></script>
+@endpush

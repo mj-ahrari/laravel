@@ -62,6 +62,9 @@ use App\Test;
 
 // Route::get('/article','\App\Http\Controllers\ArticleController@index')->name('article.index');
 
-Route::get('/test', function(Test $test){
-    return $test->testFunc();
+// Route::get('/test', function(Test $test){
+//     return $test->testFunc();
+// });
+Route::get('/', function () {
+    return view('myview');
 });
