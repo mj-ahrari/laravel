@@ -13,7 +13,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('myview');
+        $list = ['ali', 'mohammad'];
+        return view('myview', compact('list'));
     }
 
     /**

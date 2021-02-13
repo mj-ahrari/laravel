@@ -3,7 +3,10 @@
 @section('title','myview')
 
 @section('container')
-    this is myview page body.
+    {{-- @foreach ($list as $name)
+        {{$name}}
+    @endforeach --}}
+    @include('layouts.partials.comments', compact('list'))
 @endsection
 
 @section('script')

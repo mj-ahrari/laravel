@@ -61,3 +61,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/article','\App\Http\Controllers\ArticleController@index')->name('article.index');
+
