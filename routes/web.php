@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Test;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,5 +60,8 @@ use Illuminate\Support\Facades\Route;
 //     return response('this ia test')->header('X-Powered-By', 'ASP.NET', false)->cookie('name','Ali');
 // });
 
-Route::get('/article','\App\Http\Controllers\ArticleController@index')->name('article.index');
+// Route::get('/article','\App\Http\Controllers\ArticleController@index')->name('article.index');
 
+Route::get('/test', function(Test $test){
+    return $test->testFunc();
+});
