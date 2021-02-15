@@ -69,3 +69,4 @@ use Illuminate\Support\Facades\Route;
 //     return view('myview');
 // });
 Route::get('/article/show/{user:email}', 'App\Http\Controllers\ArticleController@show')->name('article.show');
+Route::get('/', 'App\Http\Controllers\UserController@index')->name('user.show');
