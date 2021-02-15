@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -34,14 +35,18 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        if($request->email === "ahrari.eh@gmail.com"){
-            session(['isAdmin'=>'Are']);
-            return redirect()->route('admin')->with('admin','yes');
-        }else{
-            return redirect()->back();
-        }
+        // if($request->email === "ahrari.eh@gmail.com"){
+        //     session(['isAdmin'=>'Are']);
+        //     return redirect()->route('admin')->with('admin','yes');
+        // }else{
+        //     return redirect()->back();
+        // }
+        $article = new Article();
+        $article->title = "This is a test article";
+        $article->user_id = 2;
+        $article->save();
     }
 
     /**
