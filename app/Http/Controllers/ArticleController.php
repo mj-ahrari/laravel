@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class ArticleController extends Controller
 {
@@ -49,9 +50,12 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        dd($id);
+        // $user = User::find($id);
+        // dd($user);
+        // print_r($user);
+        dd($user);
     }
 
     /**

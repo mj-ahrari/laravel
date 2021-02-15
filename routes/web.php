@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Test;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,6 +65,7 @@ use App\Test;
 // Route::get('/test', function(Test $test){
 //     return $test->testFunc();
 // });
-Route::get('/', function () {
-    return view('myview');
-});
+// Route::get('/', function () {
+//     return view('myview');
+// });
+Route::get('/article/show/{user:email}', 'App\Http\Controllers\ArticleController@show')->name('article.show');
