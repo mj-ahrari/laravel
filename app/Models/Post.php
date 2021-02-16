@@ -10,4 +10,8 @@ class Post extends Model
 {
     use HasFactory;
     use SoftDeletes;
+    public function scopeActive($query, $par)
+    {
+        return $query->where('status', $par);
+    }
 }

@@ -22,7 +22,8 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->name()
+            'title' => $this->faker->name(),
+            'status' => $this->faker->randomElement(['0','1'])
         ];
     }
 }

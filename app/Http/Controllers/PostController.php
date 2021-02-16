@@ -9,9 +9,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        
-        
-        $posts = Post::withTrashed()->get();
+        $posts = Post::active(1)->get();
         dd($posts);
     }
 }
