@@ -71,9 +71,12 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        //
+        $post->title = $request->title;
+        $post->user_id = $request->user_id;
+        $post->save();
+        return redirect()->back()->with('message', 'پست با موفقیت به روزرسانی شد.');
     }
 
     /**
