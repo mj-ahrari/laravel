@@ -68,6 +68,9 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('myview');
 // });
-Route::get('/article/show/{user:email}', 'App\Http\Controllers\ArticleController@show')->name('article.show');
-Route::get('/', 'App\Http\Controllers\PostController@index')->name('post.show');
-Route::get('/article/store', 'App\Http\Controllers\ArticleController@store')->name('user.store');
+// Route::get('/article/show/{user:email}', 'App\Http\Controllers\ArticleController@show')->name('article.show');
+// Route::get('/', 'App\Http\Controllers\PostController@index')->name('post.show');
+// Route::get('/article/store', 'App\Http\Controllers\ArticleController@store')->name('user.store');
+
+Route::resource('post', '\App\Http\Controllers\PostController')->parameters(['post' => 'title']);
+// Route::get('post/{post:title}', '\App\Http\Controllers\PostController@show')->name('post.show'); 
