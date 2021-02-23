@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Post;
 class UserController extends Controller
 {
     /**
@@ -17,12 +18,12 @@ class UserController extends Controller
         //     echo count($users);
         //     echo "<br>";
         // });
-        $user = User::find(1);
+        $post = Post::find(1);
         // foreach($user->roles as $role){
         //     print_r($role);
         //     echo "<br>";
         // }
-        dd($user->roles);
+        dd($post);
     }
 
     /**
