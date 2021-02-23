@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
-class UserController extends Controller
+use App\Models\Role;
+
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,16 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        // User::chunk(2, function($users){
-        //     echo count($users);
-        //     echo "<br>";
-        // });
-        $user = User::find(1);
-        // foreach($user->roles as $role){
-        //     print_r($role);
-        //     echo "<br>";
-        // }
-        dd($user->roles);
+        $role = Role::find(2);
+        dd($role->users);
     }
 
     /**
