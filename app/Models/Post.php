@@ -16,4 +16,8 @@ class Post extends Model
     public function addresses(){
         return $this->hasMany(Address::class);
     }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
