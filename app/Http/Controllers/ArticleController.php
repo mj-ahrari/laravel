@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Validator;
 
 class ArticleController extends Controller
 {
@@ -26,7 +27,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return "Article.create";
+        return view('form');
     }
 
     /**
@@ -35,7 +36,7 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
         // if($request->email === "ahrari.eh@gmail.com"){
         //     session(['isAdmin'=>'Are']);
@@ -43,10 +44,29 @@ class ArticleController extends Controller
         // }else{
         //     return redirect()->back();
         // }
-        $article = new Article();
-        $article->title = "This is a test article";
-        $article->user_id = 2;
-        $article->save();
+        // $article = new Article();
+        // $article->title = "This is a test article";
+        // $article->user_id = 2;
+        // $article->save();
+        // $validator = Validator::make($request->all(), [
+        //     'email' => 'required|email',
+        //     'username' => 'required|min:5'
+        // ],[
+        //     'email.required' => 'پر کردن فیلد email الزامی است',
+        //     'email.email' => 'فرمت ایمیل صحیح نمی باشد.',
+        //     'username.min' => 'فیلد username می بایست از 5 کاراکتر بیشتر باشد.'
+        // ]);
+        $validator = Validator::make($request->all(), [
+                'email' => 'required|email',
+                'username' => 'required|min:5'
+            ]);
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator);
+        }
+        // $request->validate([
+        //     'username' => 'required|min:5',
+        //     'email' => 'email|required'
+        // ]);
     }
 
     /**

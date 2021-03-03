@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,8 +22,10 @@
     </head>
     <body class="antialiased">
         <body>
+            @include('layouts.partials.error');
             <form action="{{ route('article.store') }}" method="post">
             @csrf
+            <input type="text" name="username" id="" placeholder="username...">
             <input type="text" name="email" id="" placeholder="email...">
             <input type="submit" value="Send">
             </form>
