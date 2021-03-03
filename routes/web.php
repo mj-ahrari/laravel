@@ -74,5 +74,11 @@ use Illuminate\Support\Facades\Route;
 
 // Route::resource('post', '\App\Http\Controllers\PostController')->parameters(['post' => 'title']);
 // Route::get('post/{post:title}', '\App\Http\Controllers\PostController@show')->name('post.show'); 
+<<<<<<< HEAD
 Route::get('/', '\App\Http\Controllers\UserController@index')->name('user.index');
 Route::resource('article', '\App\Http\Controllers\ArticleController');
+=======
+// Route::get('/', '\App\Http\Controllers\UserController@index')->name('user.index');
+// Route::get('/role', '\App\Http\Controllers\RoleController@index')->name('role.index');
+Route::get('/', '\App\Http\Controllers\PostController@index')->name('post.index');
+>>>>>>> 419428a4b9c34aa31d2e6e4004adc687db630fda

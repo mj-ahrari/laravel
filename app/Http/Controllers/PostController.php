@@ -13,9 +13,13 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = Post::find(1);
-        dd($post->addresses()->where('city', 'tehran')->get());
-        return view('post.index', compact('posts'));
+        $posts = Post::with('comments')->get();
+        // dd($post->addresses()->where('city', 'tehran')->get());
+        // return view('post.index', compact('posts'));
+        foreach($posts as $post){
+            echo $post->comments()->count();
+            echo "<br>";
+        }
     }
 
     /**
